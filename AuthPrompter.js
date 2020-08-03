@@ -1,5 +1,5 @@
 
-class AuthPrompter {
+export default class AuthPrompter {
 
     constructor() {
         this.authValidator = new AuthValidator();

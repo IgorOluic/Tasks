@@ -1,5 +1,6 @@
+import ValidationError from "./ValidationError.js";
 
-class AuthValidator {
+export default class AuthValidator {
 
     constructor() {}
 

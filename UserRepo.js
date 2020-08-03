@@ -1,28 +1,31 @@
+import UnsupportedOperationException from "./UnsupportedOperationException.js";
 
-class UserRepo {
+export default class UserRepo {
 
-    constructor () {
-        this.userArr = [];
+    constructor() {
+        if (new.target === UserRepo) {
+            throw new TypeError("")
+        }
     }
 
-    create(obj) {
-        this.usersArr.push(obj);
+    create() {
+        throw new UnsupportedOperationException("You should override this method.");
     }
 
-    read(ID) {
-        let user = this.usersArr.find(item => item.id == ID);
-        return user;
+    read() {
+        throw new UnsupportedOperationException("You should override this method.");
     }
 
-    update(ID, prop, value) {
-        let user = this.read(ID);
-        user[prop] = value;
+    update() {
+        throw new UnsupportedOperationException("You should override this method.");
     }
 
-    delete(ID) {
-        let user = this.read(ID);
-        index = this.userArr.findIndex(user);
-        this.userArr.splice(index, 1);
+    delete() {
+        throw new UnsupportedOperationException("You should override this method.");
     }
 
+    testing() {
+        throw new UnsupportedOperationException("You should override this method.");
+    }
 }
+

@@ -1,5 +1,5 @@
 
-class ValidationError extends Error {
+export default class ValidationError extends Error {
 
     constructor(message) {
         super(message);
