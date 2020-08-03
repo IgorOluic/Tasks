@@ -4,7 +4,7 @@ export default class UserRepo {
 
     constructor() {
         if (new.target === UserRepo) {
-            throw new TypeError("")
+            throw new TypeError("Cannot construct Abstract instances directly.")
         }
     }
 
