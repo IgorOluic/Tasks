@@ -24,8 +24,5 @@ export default class UserRepo {
         throw new UnsupportedOperationException("You should override this method.");
     }
 
-    testing() {
-        throw new UnsupportedOperationException("You should override this method.");
-    }
 }
 
