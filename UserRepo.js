@@ -4,24 +4,25 @@ export default class UserRepo {
 
     constructor() {
         if (new.target === UserRepo) {
-            throw new TypeError("Cannot construct Abstract instances directly.")
+            throw new TypeError("Cannot construct Abstract instances directly.");
         }
+        this.errorMessage = "You should override this method.";
     }
 
     create() {
-        throw new UnsupportedOperationException("You should override this method.");
+        throw new UnsupportedOperationException(this.errorMessage);
     }
 
     read() {
-        throw new UnsupportedOperationException("You should override this method.");
+        throw new UnsupportedOperationException(this.errorMessage);
     }
 
     update() {
-        throw new UnsupportedOperationException("You should override this method.");
+        throw new UnsupportedOperationException(this.errorMessage);
     }
 
     delete() {
-        throw new UnsupportedOperationException("You should override this method.");
+        throw new UnsupportedOperationException(this.errorMessage);
     }
 
 }
