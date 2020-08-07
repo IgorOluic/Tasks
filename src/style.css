@@ -1,0 +1,33 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+form .textbox {
+    @apply relative border-b-2 border-solid border-gray-400 my-8 transition duration-500 transition-all;
+}
+
+.textbox input {
+    @apply w-full px-1 h-10 text-base border-none outline-none bg-transparent;
+}
+
+.textbox label {
+    @apply absolute top-1/2 left-5px transform -translate-y-1/2 text-base pointer-events-none transition duration-500 transition-all;
+}
+
+
+.textbox span::before {
+    @apply absolute top-40px left-0 w-0 h-2px bg-blue-600 transition duration-500 transition-colors;
+}
+
+.textbox input:focus ~ label,
+.textbox input:valid ~ label {
+    @apply top-m5px text-blue-500;
+}
+
+.textbox input:focus ~ span::before,
+.textbox input:valid ~ span::before {
+    @apply w-full;
+} 
+
