@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <script SameSite="none" Secure src="https://kit.fontawesome.com/ff170fbc3b.js" crossorigin="anonymous"></script>
+        <script type="module" defer src="../index.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="custom.css">
+        <link  href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body class="bg-cover" style="background-image: url(../background-image.jpg)">
+
+        <div class="absolute w-1/5 bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
+
+            <h1 class="text-4xl font-bold text-gray-800 text-center pb-5 border-b border-solid border-gray-400">Login</h1>
+
+            <form method="post" class="px-10">
+
+                <div class="textbox">
+                    <input autocomplete="off" type="text" id="email-id" required>
+                    <label>E-mail</label>
+                </div>
+
+                <div class="textbox">
+                    <input type="password" id="pw-id" required>
+                    <label>Password</label>
+                </div>
+
+                <div>
+                    <input type="button" id="btn-login-id" value="Log in" class="w-full h-50px border-solid border-2 bg-blue-600 rounded-25px text-xl text-white font-bold cursor-pointer outline-none hover:border-2 hover:border-blue-500 hover:bg-blue-500 transition duration-500">
+                    <div id="spinner-id" class=""></div>
+                </div>
+
+                <div class="my-8 text-center text-base text-gray-500">
+                    Don't have an account? <a class="text-blue-600 no-underline hover:underline"href="#">Sign up</a>
+                </div>
+
+                <div id="tooltip-email-id" class="tooltip-email">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="tooltip-text-email-id" class="tooltip-text"></span>
+                </div>
+
+                <div id="tooltip-pw-id" class="tooltip-pw">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="tooltip-text-pw-id" class="tooltip-text"></span>
+                </div>
+                
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
