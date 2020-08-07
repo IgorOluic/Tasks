@@ -1,0 +1,22 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorOluic/Tasks.git"
+  },
+  "author": "\"Igor Oluic\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorOluic/Tasks/issues"
+  },
+  "homepage": "https://github.com/IgorOluic/Tasks#readme",
+  "dependencies": {
+    "tailwindcss": "^1.6.2"
+  }
+}
