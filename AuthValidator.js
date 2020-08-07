@@ -6,7 +6,7 @@ export default class AuthValidator {
 
     validateEmail(email) {
         if (!email.includes("@") || email.length < 10) {
-            throw new ValidationError(`Email should contain "@" and should be at least 10 characters long.`);
+            throw new ValidationError(`Email should contain "@" and should be at least 10 characters long.`, 'email');
         } else {
             return email;
         }
@@ -18,9 +18,9 @@ export default class AuthValidator {
         let specialChars = /[!@#$%^&*(),.?":{}|<>]/;
 
         if (password.length < minPasswordLength) {
-            throw new ValidationError(`Password is too short. It should be at least ${minPasswordLength} characters long`);
+            throw new ValidationError(`Password is too short. It should be at least ${minPasswordLength} characters long.`, 'password');
         } else if (!password.match(alphanumericChars) || !password.match(specialChars)) {
-            throw new ValidationError("Password should include at least 1 alphanumerical character and 1 special character");
+            throw new ValidationError("Password should include at least 1 alphanumerical character and 1 special character.", 'password');
         } else {
             return password;
         }
