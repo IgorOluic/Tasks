@@ -1,0 +1,91 @@
+DOMStrings.js
+ide u view
+
+objekat koji sadrzi sve dom stringove
+------------------
+
+TooltipErrors.js
+ide u view
+importuje DOMStrings
+
+sadrzi funkcije za manipulisanje tooltipova
+------------------
+
+InputView.js
+ide u view
+importuje DOMStrings
+
+sadrzi funkcije za brisanje input polja
+------------------
+
+LoadingSpinner.js
+ide u view
+importuje DOMStrings
+
+sadrzi funkcije za prikazivanje i sakrivanje spinnera
+------------------
+
+Result.js
+ide u view
+importuje DOMStrings
+
+prikazuje rezultate logIn i signUp requestova
+------------------
+
+Request.js
+ide u model
+
+sadrzi async funkciju koja kao argumente prima URL i data
+poziva fetch i cuva rezultat u response kojeg returnujemo
+posto data argument treba da bude isti i za signup i za login request, mozemo da koristimo ovu funkciju u oba slucaja
+------------------
+
+LoginValidator.js
+ide u controller
+importuje AuthValidator.js, DOMStrings.js, InputView.js
+
+
+sadrzi funkciju sa try catch, unutar try vrsimo validaciju inputa pomocu AuthValidator, ako nije bilo gresaka, vracamo objekat "data" koji ima propertije username i password i
+dodajemo im vrednosti inputa,
+ukoliko naidjemo na gresku handle-ujemo je unutar catch pomocu TooltipErrors i InputView i vracamo false
+
+
+// u AuthValidator mozemo dodati funkcije npr "softValidateEmail" gde cemo samo proveriti da li je polje prazno
+// posto koliko sam vidjao po sajtovima, login strane obicno nemaju tu "hard" validaciju npr "email mora da sadrzi @" i tako dalje, mozda gresim
+
+------------------
+
+Login.js
+ide u controller
+importuje LoadingSpinner, Request.js, LoginValidator.js
+
+ovde bismo imali funkciju koju mi je lakse da objasnim kodom nego recima
+
+izgledala bi otprilike ovako
+
+function login() {
+    let data = LoginValidator();
+
+    if (data) {
+        showLoadingSpinner();
+        Request("www.example.com/login", data)
+        .then(() => {
+            hideLoadingSpinner();
+            showSuccessfulLogin();
+        }
+        .catch((error) => {
+            hideLoadingSpinner();
+            showUnsuccessfulLogin();
+        })
+    }
+}
+
+data bi vracalo true ukoliko je validacija bila uspesna, false u suprotnom
+
+---------------------
+
+// morali bi da napravimo jos jedan module koji sadrzi sve event listenere, ili mozda mozemo direktno da stavimo event listenere na elemente 
+// iako html ne sadrzi te skripte? nisam siguran
+
+
+
