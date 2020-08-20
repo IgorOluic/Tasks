@@ -86,7 +86,7 @@ data bi vracalo true ukoliko je validacija bila uspesna, false u suprotnom
 
 // morali bi da napravimo jos jedan module koji sadrzi sve event listenere, ili mozda mozemo direktno da stavimo event listenere na elemente 
 // iako html ne sadrzi te skripte? nisam siguran
-//
+
 
 
 
