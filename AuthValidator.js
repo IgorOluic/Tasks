@@ -14,6 +14,14 @@ export default class AuthValidator {
     }
   }
 
+  softValidateEmail(email) {
+    if (!email) {
+      throw new ValidationError("This field should not be empty.", "email");
+    } else {
+      return email;
+    }
+  }
+
   validatePassword(password) {
     let minPasswordLength = 3;
     let alphanumericChars = /[a-z0-9]+/i;
@@ -32,6 +40,14 @@ export default class AuthValidator {
         "Password should include at least 1 alphanumerical character and 1 special character.",
         "password"
       );
+    } else {
+      return password;
+    }
+  }
+
+  softValidatePassword(password) {
+    if (!password) {
+      throw new ValidationError("This field should not be empty.", "password");
     } else {
       return password;
     }
