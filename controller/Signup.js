@@ -1,5 +1,5 @@
 import LoadingSpinner from "../view/LoadingSpinner.js";
-import request from "../model/Request.js";
+import signupRequest from "../model/SignupRequest.js";
 import Result from "../view/Result.js";
 import signupValidator from "./SignupValidator.js";
 
@@ -10,13 +10,7 @@ function signup() {
 
   if (data) {
     spinner.showSpinner();
-    request("https://dentministrator.herokuapp.com/auth/signup", data)
-      .then(() => {
-        result.signedUp();
-      })
-      .catch(() => {
-        result.notSignedUp();
-      });
+    signupRequest("https://dentministrator.herokuapp.com/auth/signup", data);
   }
 }
 
